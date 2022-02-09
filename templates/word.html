@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #0c0000;
+  font-family: 'Open Sans', sans-serif;
+}
+.intro {
+  color: #e7be04;
+font-size: 40px;
+padding-left: 50px;
+padding-bottom: 5px;
+  position: relative;
+  display: flex;
+}
+.result{
+  color: #e7be04;
+font-size: 35px;
+padding-left: 110px;
+padding-bottom: 5px;
+  position: relative;
+  display: flex;
+}
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.all{
+align-self: center;
+padding-left: 70px;
+display: flex;
+
+}
+.searchTerm {
+  width: 100%;
+  border: 3px solid #e7be04;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #e7be04;
+}
+
+.searchTerm:focus{
+  color: #e7be04;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #e7be04;
+  background: #e7be04;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.info{
+  color: #e7be04;
+}
+.row {margin: 0 -5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="intro">
+    Enter to Know!!! 
+  </div>
+   <div class="search">
+     <form action="word">
+      <div class ="all" >
+      <input type="text" name="search" class="searchTerm" placeholder="Input Your Word Here">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+     </div>
+    </form>
+   </div>
+   <div class="result">
+     <u>Result</u>
+   </div>
+   <div class="info">
+   <h3>Meaning: {{meaning}}</h3>
+   
+   <h3>Synonyms: {% for synonym in synonyms %}
+       {{synonym}},
+       {% endfor %}</h3>
+   
+   
+   <h3>Antonyms: {% for antonym in antonyms %}
+       {{antonym}},
+       {% endfor %}</h3>
+   </div>
+</div>
+</body>
+</html>
